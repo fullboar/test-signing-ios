@@ -32,13 +32,13 @@ jobs:
         run: |
           scripts/makekc.sh
 
-      - name: Run debug build
-        run: |
-          xcodebuild \
-          -project TestBuildAndSign.xcodeproj \
-          -scheme TestBuildAndSign \
-          -configuration Debug \
-          -derivedDataPath xbuild \
-          build \
-          CODE_SIGNING_ALLOWED=NO \
-          CODE_SIGNING_REQUIRED=NO
+      # - name: Run debug build
+      #   run: |
+      #     xcodebuild \
+      #     -project TestBuildAndSign.xcodeproj \
+      #     -scheme TestBuildAndSign \
+      #     -configuration Debug \
+      #     -derivedDataPath xbuild \
+      #     build \
+      #     CODE_SIGNING_ALLOWED=NO \
+      #     CODE_SIGNING_REQUIRED=NO
