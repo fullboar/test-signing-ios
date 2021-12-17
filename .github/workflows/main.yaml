@@ -46,6 +46,18 @@ jobs:
           -archivePath TestBuildAndSign.xcarchive \
           archive
 
-      - name: Explore
+      - name: Explore 1
+        run: |
+          ls -lah
+
+      - name: Export IPA
+        run: |
+          xcodebuild \
+          -exportArchive \
+          -archivePath TestBuildAndSign.xcarchive \
+          -exportPath "foo" \
+          -exportOptionsPlist options.plist
+
+      - name: Explore 2
         run: |
           ls -lah
