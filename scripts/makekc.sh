@@ -5,7 +5,7 @@ CERT_PATH=certificates.p12
 
 echo ">> Build Keychain Starting... 🤞"
 
-echo ${APPLEWWDRCAG3_CERT} | base64 -d > 
+echo ${APPLEWWDRCAG3_CERT} | base64 -d > AppleWWDRCAG3.cer.der
 /usr/bin/security import AppleWWDRCAG3.cer.der
 
 echo ">> Extracting Artifats"
