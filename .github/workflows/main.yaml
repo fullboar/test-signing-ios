@@ -52,7 +52,7 @@ jobs:
       - name: PP
         env:         
           PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
-          PROFILE_ID: 82d0bc53-1708-4833-884f-e3348c30fdbb
+          PROFILE_ID: 97030e54-555a-4641-b765-c458064c7596
         run: |
           scripts/makepp.sh
 
