@@ -57,7 +57,7 @@ jobs:
           mkdir -p "~/MobileDevice/Provisioning\ Profiles" \
           echo ${PROVISIONING_PROFILE} | base64 -d > "~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision"
 
-      - name: Explore P
+      - name: Explore PP
         run: |
           ls -lah ~/MobileDevice/Provisioning\ Profiles/
 
