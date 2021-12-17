@@ -65,7 +65,7 @@ jobs:
           xcodebuild \
           -exportArchive \
           -archivePath TestBuildAndSign.xcarchive \
-          -exportPath "foo" \
+          -exportPath export \
           -exportOptionsPlist options.plist
 
       - name: Explore 2
