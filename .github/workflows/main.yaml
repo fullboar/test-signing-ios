@@ -43,7 +43,7 @@ jobs:
           -configuration Release \
           -derivedDataPath xbuild \
           -xcconfig manual.xcconfig \
-          -archivePath TestBuildAndSign.xcarchive
+          -archivePath TestBuildAndSign.xcarchive \
           archive
 
       - name: Explore
