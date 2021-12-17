@@ -19,7 +19,7 @@ echo "Keychain Starting"
 echo "Extracting Artifats"
 
 echo $PWD
-echo ${{ secrets.SuperSecret }} > $CERT_PATH
+echo ${{ secrets.ITUNES_CERT_P12 }} > $CERT_PATH
 ls -lah $CERT_PATH
 
 echo "Building keychian"
