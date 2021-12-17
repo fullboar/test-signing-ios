@@ -19,8 +19,8 @@ echo "Keychain Starting"
 echo "Extracting Artifats"
 
 echo $PWD
-echo ${{ env.ITUNES_CERT_P12 }} > $CERT_PATH
-file $CERT_PATH
+echo ${{ secrets.SuperSecret }} > $CERT_PATH
+ls -lah $CERT_PATH
 
 echo "Building keychian"
 /usr/bin/security create-keychain -p $1 $KC_NAME
