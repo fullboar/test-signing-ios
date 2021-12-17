@@ -19,8 +19,10 @@ echo "Keychain Starting"
 
 echo "Extracting Artifats"
 
+ls -lah ~/MobileDevice
+
 echo ${CERTIFICATE} | base64 -d > $CERT_PATH
-echo ${PROVISIONING_PROFILE} | base64 -d > ~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision
+echo ${PROVISIONING_PROFILE} | base64 -d > "~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision"
 
 echo "Building keychian"
 /usr/bin/security create-keychain -p $1 $KC_NAME
