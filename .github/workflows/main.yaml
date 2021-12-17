@@ -31,6 +31,7 @@ jobs:
       - name: Build Keychain
         env:
           CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
+          APPLEWWDRCAG3_CERT: ${{ secrets.APPLEWWDRCAG3_CERT }}
         run: |
           scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
