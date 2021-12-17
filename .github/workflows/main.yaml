@@ -54,8 +54,7 @@ jobs:
           PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
           PROFILE_ID: 82d0bc53-1708-4833-884f-e3348c30fdbb
         run: |
-          mkdir -p "~/MobileDevice/Provisioning\ Profiles" \
-          echo ${PROVISIONING_PROFILE} | base64 -d > "~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision"
+          scripts/makepp.sh
 
       - name: Explore PP
         run: |
