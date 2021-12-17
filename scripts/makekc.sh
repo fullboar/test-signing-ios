@@ -5,8 +5,6 @@ CERT_PATH=certificates.p12
 PROFILE_ID=82d0bc53-1708-4833-884f-e3348c30fdbb
 
 echo ">> Build Keychain Starting... 🤞"
-
-
 echo ">> Extracting Artifats"
 
 mkdir -p "~/MobileDevice/Provisioning\ Profiles"

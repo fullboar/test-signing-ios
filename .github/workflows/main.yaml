@@ -35,13 +35,17 @@ jobs:
         run: |
           scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
-      # - name: Run debug build
-      #   run: |
-      #     xcodebuild \
-      #     -project TestBuildAndSign.xcodeproj \
-      #     -scheme TestBuildAndSign \
-      #     -configuration Debug \
-      #     -derivedDataPath xbuild \
-      #     build \
-      #     CODE_SIGNING_ALLOWED=NO \
-      #     CODE_SIGNING_REQUIRED=NO
+      - name: Build & Sign
+        run: |
+          xcodebuild \
+          -project TestBuildAndSign.xcodeproj \
+          -scheme TestBuildAndSign \
+          -configuration Release \
+          -derivedDataPath xbuild \
+          -xcconfig manual.xcconfig \
+          -archivePath TestBuildAndSign.xcarchive
+          archive \
+
+      - name: Explore
+        run: |
+          ls -lah
