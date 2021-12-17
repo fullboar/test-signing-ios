@@ -28,6 +28,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-dd-xcode-${{ env.cacheId }}-
 
+      - name: Foo
+        run: |
+          scripts/makekc.sh
+
       - name: Run debug build
         run: |
           xcodebuild \
