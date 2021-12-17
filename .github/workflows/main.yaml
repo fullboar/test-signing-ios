@@ -29,6 +29,8 @@ jobs:
             ${{ runner.os }}-dd-xcode-${{ env.cacheId }}-
 
       - name: Foo
+        env:
+          CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
         run: |
           scripts/makekc.sh
 
