@@ -28,7 +28,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-dd-xcode-${{ env.cacheId }}-
 
-      - name: Foo
+      - name: Build Keychain
         env:
           CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
           PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}

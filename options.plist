@@ -14,5 +14,10 @@
 	<true/>
 	<key>teamID</key>
   <string>L796QSLV3E</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>ca.bc.gov.pathfinder.TestBuildAndSign</key>
+		<string>82d0bc53-1708-4833-884f-e3348c30fdbb</string>
+	</dict>
 </dict>
 </plist>
