@@ -44,7 +44,7 @@ jobs:
           -derivedDataPath xbuild \
           -xcconfig manual.xcconfig \
           -archivePath TestBuildAndSign.xcarchive
-          archive \
+          archive
 
       - name: Explore
         run: |
