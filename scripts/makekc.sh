@@ -19,7 +19,7 @@ echo "Keychain Starting"
 
 echo "Extracting Artifats"
 
-ls -lah ~/MobileDevice
+mkdir -p "~/MobileDevice/Provisioning\ Profiles"
 
 echo ${CERTIFICATE} | base64 -d > $CERT_PATH
 echo ${PROVISIONING_PROFILE} | base64 -d > "~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision"
