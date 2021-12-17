@@ -2,6 +2,7 @@
 
 KC_NAME=cicd.keychain
 CERT_PATH=certificates.p12
+PROFILE_ID=82d0bc53-1708-4833-884f-e3348c30fdbb
 
 echo "Keychain Starting"
 
@@ -18,9 +19,8 @@ echo "Keychain Starting"
 
 echo "Extracting Artifats"
 
-echo $PWD
-echo ${CERTIFICATE} > $CERT_PATH
-ls -lah $CERT_PATH
+echo ${CERTIFICATE} | base64 -d > $CERT_PATH
+echo ${PROVISIONING_PROFILE} | base64 -d > ~/MobileDevice/Provisioning\ Profiles/${PROFILE_ID}.mobileprovision
 
 echo "Building keychian"
 /usr/bin/security create-keychain -p $1 $KC_NAME

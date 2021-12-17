@@ -31,8 +31,9 @@ jobs:
       - name: Foo
         env:
           CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
+          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
         run: |
-          scripts/makekc.sh
+          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
       # - name: Run debug build
       #   run: |
