@@ -4,10 +4,7 @@
 PP_DIR="${HOME}/Library/MobileDevice/Provisioning\ Profiles"
 
 echo ">> Build Provisioning Profile... 🤞"
-echo ">> PP Home = ${PP_DIR}"
-
-ls -lah "${PP_DIR}"
-ls -lah ~/
+echo ">> Provisioning Profile Home = ${PP_DIR}"
 
 mkdir -p "${PP_DIR}"
 
