@@ -35,6 +35,13 @@ jobs:
         run: |
           scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
+      - name: Create Provisioning Profile
+        env:         
+          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+          PROFILE_ID: 97030e54-555a-4641-b765-c458064c7596
+        run: |
+          scripts/makepp.sh
+
       - name: Build & Sign
         run: |
           xcodebuild \
@@ -49,13 +56,6 @@ jobs:
       - name: Explore 1
         run: |
           ls -lah
-
-      - name: PP
-        env:         
-          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
-          PROFILE_ID: 97030e54-555a-4641-b765-c458064c7596
-        run: |
-          scripts/makepp.sh
 
       - name: Export IPA
         run: |
