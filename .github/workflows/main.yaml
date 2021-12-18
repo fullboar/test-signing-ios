@@ -42,7 +42,7 @@ jobs:
         run: |
           scripts/makepp.sh
 
-      - name: Build & Sign
+      - name: Build
         run: |
           xcodebuild \
           -project TestBuildAndSign.xcodeproj \
@@ -51,14 +51,13 @@ jobs:
           -derivedDataPath xbuild \
           -xcconfig manual.xcconfig \
           -archivePath TestBuildAndSign.xcarchive \
-          "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
           archive
 
       - name: Explore 1
         run: |
           ls -lah
 
-      - name: Export IPA
+      - name: Archive & Sign
         run: |
           xcodebuild \
           -exportArchive \
