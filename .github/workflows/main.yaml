@@ -33,7 +33,7 @@ jobs:
           CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
           APPLEWWDRCAG3_CERT: ${{ secrets.APPLEWWDRCAG3_CERT }}
         run: |
-          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
+          scripts/makekc.sh ""
 
       - name: Create Provisioning Profile
         env:         
