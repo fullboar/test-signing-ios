@@ -64,7 +64,8 @@ jobs:
           -archivePath TestBuildAndSign.xcarchive \
           -exportPath export \
           -exportOptionsPlist options.plist \
-          -verbose
+          -verbose \
+          "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
 
       - name: Explore 2
         run: |
