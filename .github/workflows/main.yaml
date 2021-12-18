@@ -57,10 +57,6 @@ jobs:
         run: |
           scripts/makepp.sh
 
-      - name: Explore PP
-        run: |
-          ls -lah ~/MobileDevice/Provisioning\ Profiles/
-
       - name: Export IPA
         run: |
           xcodebuild \
