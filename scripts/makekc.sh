@@ -13,7 +13,6 @@ echo ${CERTIFICATE} | base64 -d > $CERT_PATH
 
 echo ">> Create Keychain $KC_NAME"
 /usr/bin/security create-keychain -p $1 $KC_NAME
-/usr/bin/security list-keychains -s $KC_NAME
 /usr/bin/security default-keychain -s $KC_NAME
 /usr/bin/security unlock-keychain -p $1 $KC_NAME
 /usr/bin/security list-keychains -d user -s $KC_NAME
