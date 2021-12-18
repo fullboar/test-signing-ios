@@ -1,12 +1,13 @@
 #!/bin/bash
 
 
-PP_DIR=${HOME}/Library/MobileDevice/Provisioning\ Profiles
+PP_DIR="${HOME}/Library/MobileDevice/Provisioning\ Profiles"
 
 echo ">> Build Provisioning Profile... 🤞"
-echo ">> PP HOme = ${PP_DIR}"
+echo ">> PP Home = ${PP_DIR}"
 
 ls -lah ${PP_DIR}
+ls -lah ~/
 
 mkdir -p ${PP_DIR}
 
