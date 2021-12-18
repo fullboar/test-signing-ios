@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KC_NAME=cicd.keychain
+# KC_NAME=cicd.keychain
+KC_NAME=login.keychain
 CERT_PATH=certificates.p12
 
 echo ">> Build Keychain Starting... 🤞"
