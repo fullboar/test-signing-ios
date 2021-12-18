@@ -63,7 +63,7 @@ jobs:
           -exportArchive \
           -archivePath TestBuildAndSign.xcarchive \
           -exportPath export \
-          -exportOptionsPlist options.plist
+          -exportOptionsPlist options.plist \
           -verbose
 
       - name: Explore 2
