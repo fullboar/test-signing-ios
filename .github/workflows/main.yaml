@@ -33,7 +33,7 @@ jobs:
           CERTIFICATE: ${{ secrets.ITUNES_CERT_P12 }}
           APPLEWWDRCAG3_CERT: ${{ secrets.APPLEWWDRCAG3_CERT }}
         run: |
-          scripts/makekc.sh ""
+          scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
       - name: Create Provisioning Profile
         env:         
@@ -51,6 +51,7 @@ jobs:
           -derivedDataPath xbuild \
           -xcconfig manual.xcconfig \
           -archivePath TestBuildAndSign.xcarchive \
+          "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
           archive
 
       - name: Explore 1
