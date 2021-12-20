@@ -60,6 +60,7 @@ jobs:
           -xcconfig release.xcconfig \
           -archivePath TestBuildAndSign.xcarchive \
           -sdk iphoneos \
+          -verbose \
           archive
 
       - name: Explore 1
