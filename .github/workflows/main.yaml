@@ -59,6 +59,7 @@ jobs:
           -derivedDataPath xbuild \
           -xcconfig release.xcconfig \
           -archivePath TestBuildAndSign.xcarchive \
+          -sdk iphoneos \
           archive
 
       - name: Explore 1
