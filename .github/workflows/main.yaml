@@ -55,25 +55,25 @@ jobs:
           ls -lah "${PP_DIR}" && \
           exit 0
 
-      - name: fastlane
-        env:
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-          FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-        run: |
-          gem install fastlane && fastlane beta
-      # - name: Build
+      # - name: fastlane
+      #   env:
+      #     FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+      #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+      #     FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
       #   run: |
-      #     xcodebuild \
-      #     -project TestBuildAndSign.xcodeproj \
-      #     -scheme TestBuildAndSign \
-      #     -configuration Release \
-      #     -derivedDataPath xbuild \
-      #     -xcconfig release.xcconfig \
-      #     -archivePath TestBuildAndSign.xcarchive \
-      #     -sdk iphoneos \
-      #     -verbose \
-      #     archive
+      #     gem install fastlane && fastlane beta
+      - name: Build
+        run: |
+          xcodebuild \
+          -project TestBuildAndSign.xcodeproj \
+          -scheme TestBuildAndSign \
+          -configuration Release \
+          -derivedDataPath xbuild \
+          -xcconfig release.xcconfig \
+          -archivePath TestBuildAndSign.xcarchive \
+          -sdk iphoneos \
+          -verbose \
+          archive
 
       - name: Explore 1
         run: |
