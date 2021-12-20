@@ -49,6 +49,7 @@ jobs:
           PROFILE_ID: 9be8c593-a910-4c37-b77b-73bdcb730911
         run: |
           scripts/makepp.sh && \
+          ls -lah ~/Library && \
           sudo chown -R $(whoami) ~/Library/MobileDevice
 
       - name: fastlane
