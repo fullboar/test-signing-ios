@@ -47,8 +47,10 @@ jobs:
         env:         
           PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
           PROFILE_ID: 9be8c593-a910-4c37-b77b-73bdcb730911
+          PP_DIR: ~/Library/MobileDevice/Provisioning\ Profiles
         run: |
-          scripts/makepp.sh && \
+          mkdir -p "${PP_DIR}"
+          echo -n "${PROVISIONING_PROFILE}" | base64 --decode --output "${PP_DIR}/${PROFILE_ID}.mobileprovision"
           ls -lah ~/Library && \
           sudo chown -R $(whoami) ~/Library/MobileDevice
 
