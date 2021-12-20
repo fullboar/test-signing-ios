@@ -1,0 +1,8 @@
+app_identifier("ca.bc.gov.pathfinder.TestBuildAndSign") # The bundle identifier of your app
+apple_id("jason.leach@fullboar.ca") # Your Apple email address
+
+itc_team_id("908186") # App Store Connect Team ID
+team_id("L796QSLV3E") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
