@@ -46,7 +46,7 @@ jobs:
 
       - name: Create Provisioning Profile
         env:         
-          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+          PROVISIONING_PROFILE: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
           PROFILE_ID: 9be8c593-a910-4c37-b77b-73bdcb730911
         run: |
           scripts/makepp.sh
