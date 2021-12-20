@@ -58,7 +58,7 @@ jobs:
           -scheme TestBuildAndSign \
           -configuration Release \
           -derivedDataPath xbuild \
-          -xcconfig manual.xcconfig \
+          -xcconfig release.xcconfig \
           -archivePath TestBuildAndSign.xcarchive \
           archive
 
