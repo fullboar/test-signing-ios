@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CERT_PATH=$RUNNER_TEMP/certificates.p12
-KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+KEYCHAIN_PATH=$RUNNER_TEMP/cicd.keychain-db
 
 echo ">> Build Keychain Starting... 🤞"
 

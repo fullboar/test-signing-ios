@@ -75,19 +75,15 @@ jobs:
           -verbose \
           archive
 
-      - name: Explore 1
+      - name: Archive & Sign
         run: |
-          ls -lah
-
-      # - name: Archive & Sign
-      #   run: |
-      #     xcodebuild \
-      #     -exportArchive \
-      #     -archivePath TestBuildAndSign.xcarchive \
-      #     -exportPath export \
-      #     -exportOptionsPlist options.plist \
-      #     -verbose \
-      #     "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
+          xcodebuild \
+          -exportArchive \
+          -archivePath TestBuildAndSign.xcarchive \
+          -exportPath export \
+          -exportOptionsPlist options.plist \
+          -verbose \
+          "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
 
       - name: Explore 2
         run: |
