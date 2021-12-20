@@ -50,6 +50,10 @@ jobs:
         run: |
           scripts/makepp.sh
 
+      - name: xxx
+        run: |
+          xcode-select --install
+
       - name: Build
         run: |
           xcodebuild \
