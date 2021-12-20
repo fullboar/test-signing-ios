@@ -68,23 +68,23 @@ jobs:
           -project TestBuildAndSign.xcodeproj \
           -scheme TestBuildAndSign \
           -configuration Release \
-          -derivedDataPath xbuild \
-          -xcconfig release.xcconfig \
-          -archivePath TestBuildAndSign.xcarchive \
+          -derivedDataPath $RUNNER_TEMP/xbuild \
+          -xcconfig $RUNNER_TEMP/release.xcconfig \
+          -archivePath $RUNNER_TEMP/TestBuildAndSign.xcarchive \
           -sdk iphoneos \
           -verbose \
           archive
 
-      - name: Archive & Sign
-        run: |
-          xcodebuild \
-          -exportArchive \
-          -archivePath TestBuildAndSign.xcarchive \
-          -exportPath export \
-          -exportOptionsPlist options.plist \
-          -verbose \
-          "OTHER_CODE_SIGN_FLAGS=--keychain 'cicd.keychain'" \
-
       - name: Explore 2
         run: |
           ls -lah
+
+      # - name: Archive & Sign
+      #   run: |
+      #     xcodebuild \
+      #     -exportArchive \
+      #     -archivePath $RUNNER_TEMP/TestBuildAndSign.xcarchive \
+      #     -exportPath export \
+      #     -exportOptionsPlist options.plist \
+      #     -verbose \
+      #     "OTHER_CODE_SIGN_FLAGS=--keychain '$RUNNER_TEMP/cicd.keychain-db'"
