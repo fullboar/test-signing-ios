@@ -13,6 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+
+      - name: Install fastlane
+        run: |
+          gem install fastlane
+
       # Watch for changes to the `App` and `iOS` paths, use
       # git for cache keys.
       - name: Generate cache key
@@ -38,7 +47,7 @@ jobs:
       - name: Create Provisioning Profile
         env:         
           PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
-          PROFILE_ID: 97030e54-555a-4641-b765-c458064c7596
+          PROFILE_ID: 9be8c593-a910-4c37-b77b-73bdcb730911
         run: |
           scripts/makepp.sh
 
