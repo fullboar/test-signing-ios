@@ -11,6 +11,7 @@ mkdir -p "${PP_DIR}"
 echo ${PROVISIONING_PROFILE} | base64 -d > "${PP_DIR}/${PROFILE_ID}.mobileprovision"
 
 ls -lah "${PP_DIR}"
+md5 "${PP_DIR}/${PROFILE_ID}.mobileprovision"
 
 echo ">> Build Keychain Finished. 🤗"
 
