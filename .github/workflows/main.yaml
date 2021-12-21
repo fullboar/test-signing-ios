@@ -52,6 +52,7 @@ jobs:
         run: |
           scripts/makepp.sh \
           ls -lah "${PP_DIR}" && \
+          ls -lah "/var" && \
           exit 0
 
       # - name: fastlane
