@@ -24,7 +24,7 @@ echo ">> Create Keychain $KC_NAME"
 # security unlock-keychain -p "$1" $KEYCHAIN_PATH
 
 echo ">> Importing Certificate"
-/usr/bin/security import $CERT_PATH -k $KC_NAME -P $1 -T /usr/bin/codesign -T /usr/bin/security
+/usr/bin/security import $CERT_PATH -k $KC_NAME -P $1 -A -t cert -f pkcs12 -T /usr/bin/codesign -T /usr/bin/security
 /usr/bin/security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $1 $KC_NAME
 /usr/bin/security set-keychain-settings $KC_NAME
 
