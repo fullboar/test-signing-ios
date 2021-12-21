@@ -79,12 +79,11 @@ jobs:
         run: |
           ls -lah
 
-      # - name: Archive & Sign
-      #   run: |
-      #     xcodebuild \
-      #     -exportArchive \
-      #     -archivePath $RUNNER_TEMP/TestBuildAndSign.xcarchive \
-      #     -exportPath export \
-      #     -exportOptionsPlist options.plist \
-      #     -verbose \
-      #     "OTHER_CODE_SIGN_FLAGS=--keychain '$RUNNER_TEMP/cicd.keychain-db'"
+      - name: Archive & Sign
+        run: |
+          xcodebuild \
+          -exportArchive \
+          -archivePath TestBuildAndSign.xcarchive \
+          -exportPath export \
+          -exportOptionsPlist options.plist \
+          -verbose
