@@ -10,7 +10,7 @@ echo ">> Build Keychain Starting... 🤞"
 echo ">> Extracting Artifats"
 echo ">> MMMMMMMMMMMMM0"
 echo -n "${CERTIFICATE}" 
-echo -n "${CERTIFICATE}" | base64 -d -o "${CERT_PATH}"
+echo -n "${CERTIFICATE}" | base64 -d >"${CERT_PATH}"
 echo ">> MMMMMMMMMMMMM1"
 # md5 "$CERT_PATH"
 
