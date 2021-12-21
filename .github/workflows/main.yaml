@@ -86,4 +86,5 @@ jobs:
           -archivePath TestBuildAndSign.xcarchive \
           -exportPath export \
           -exportOptionsPlist options.plist \
+          -allowProvisioningUpdates \
           -verbose
