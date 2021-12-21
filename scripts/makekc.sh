@@ -10,6 +10,8 @@ echo ">> Extracting Artifats"
 echo -n "${CERTIFICATE}" | base64 --decode --output "${CERT_PATH}"
 md5 "$CERT_PATH"
 
+echo "mmm"
+
 echo ">> Create Keychain $KC_NAME"
 /usr/bin/security create-keychain -p $1 $KC_NAME
 /usr/bin/security default-keychain -s $KC_NAME
