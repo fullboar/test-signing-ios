@@ -2,16 +2,19 @@
 set -euxo pipefail
 
 CERT_PATH=$RUNNER_TEMP/certificates.p12
-# KEYCHAIN_PATH=$RUNNER_TEMP/cicd.keychain-db
 KC_NAME=cicd.keychain
+# KEYCHAIN_PATH=$RUNNER_TEMP/cicd.keychain-db
 
 echo ">> Build Keychain Starting... 🤞"
 
 echo ">> Extracting Artifats"
+echo ">> MMMMMMMMMMMMM0"
+echo -n "${CERTIFICATE}" 
 echo -n "${CERTIFICATE}" | base64 -d -o "${CERT_PATH}"
-md5 "$CERT_PATH"
+echo ">> MMMMMMMMMMMMM1"
+# md5 "$CERT_PATH"
 
-echo ">> MMMMMMMMMMMMMM"
+
 
 echo ">> Create Keychain $KC_NAME"
 /usr/bin/security create-keychain -p $1 $KC_NAME
