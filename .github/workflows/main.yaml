@@ -64,7 +64,7 @@ jobs:
 
       - name: Explore z
         run: |
-          xcode-select -p && xcode-select -r
+          xcode-select -p && sudo xcode-select -r
 
       - name: Build
         run: |
