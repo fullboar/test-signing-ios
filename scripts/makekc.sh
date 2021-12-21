@@ -3,6 +3,7 @@ set -eo pipefail
 
 CERT_PATH=$RUNNER_TEMP/certificates.p12
 # KEYCHAIN_PATH=$RUNNER_TEMP/cicd.keychain-db
+KC_NAME=cicd.keychain
 
 echo ">> Build Keychain Starting... 🤞"
 
