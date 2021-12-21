@@ -12,6 +12,6 @@ uuid=$(/usr/libexec/plistbuddy -c Print:UUID /dev/stdin <<< `echo "${PROVISIONIN
 echo "${PROVISIONING_PROFILE}" | base64 -d >"${PP_DIR}/${uuid}.mobileprovision"
 md5 "${PP_DIR}/${uuid}.mobileprovision"
 
-echo ">> Build Keychain Finished. 🤗"
+echo ">> Build Provisioning Profile. 🤗"
 
 exit 
