@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eo pipefail
+set -euxo pipefail
 
 PP_DIR="~/Library/MobileDevice/Provisioning\ Profiles"
 

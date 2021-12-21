@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eo pipefail
+set -euxo pipefail
 
 CERT_PATH=$RUNNER_TEMP/certificates.p12
 # KEYCHAIN_PATH=$RUNNER_TEMP/cicd.keychain-db
