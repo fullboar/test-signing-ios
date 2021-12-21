@@ -60,7 +60,12 @@ jobs:
       #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
       #     FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
       #   run: |
-      #     gem install fastlane && fastlane beta
+      #     brew install fastlane && fastlane beta
+
+      - name: Explore z
+        run: |
+          xcode-select -p && xcode-select -r
+
       - name: Build
         run: |
           xcodebuild \
