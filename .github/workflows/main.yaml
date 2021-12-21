@@ -67,9 +67,9 @@ jobs:
           -project TestBuildAndSign.xcodeproj \
           -scheme TestBuildAndSign \
           -configuration Release \
-          -derivedDataPath $RUNNER_TEMP/xbuild \
+          -derivedDataPath xbuild \
           -xcconfig release.xcconfig \
-          -archivePath $RUNNER_TEMP/TestBuildAndSign.xcarchive \
+          -archivePath TestBuildAndSign.xcarchive \
           -sdk iphoneos \
           -verbose \
           archive
