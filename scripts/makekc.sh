@@ -8,7 +8,7 @@ KC_NAME=cicd.keychain
 echo ">> Build Keychain Starting... 🤞"
 
 echo ">> Extracting Artifats"
-echo -n "${CERTIFICATE}" | base64 --decode >"${CERT_PATH}"
+echo -n "${CERTIFICATE}" | base64 -d -o "${CERT_PATH}"
 md5 "$CERT_PATH"
 
 echo ">> MMMMMMMMMMMMMM"
