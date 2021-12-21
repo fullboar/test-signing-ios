@@ -69,7 +69,7 @@ jobs:
           -scheme TestBuildAndSign \
           -configuration Release \
           -derivedDataPath $RUNNER_TEMP/xbuild \
-          -xcconfig $RUNNER_TEMP/release.xcconfig \
+          -xcconfig release.xcconfig \
           -archivePath $RUNNER_TEMP/TestBuildAndSign.xcarchive \
           -sdk iphoneos \
           -verbose \
