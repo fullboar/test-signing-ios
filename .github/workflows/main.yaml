@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: What XCode are we using?
+        run: |
+          xcode-select -p 
+
       # - name: Configure ruby
       #   uses: ruby/setup-ruby@v1
       #   with:
@@ -23,12 +27,11 @@ jobs:
         run: |
           pip3 install codemagic-cli-tools
 
-      # Watch for changes to the `App` and `iOS` paths, use
+      # Watch for changes to the HEAD ref, use
       # git for cache keys.
       - name: Generate cache key
         run: |
-          echo $(git rev-parse HEAD:App) > ./dd-cache-key.txt
-          echo $(git rev-parse HEAD:ios) >> ./dd-cache-key.txt
+          echo $(git rev-parse HEAD) > ./dd-cache-key.txt
 
       - name: Cache derived data
         uses: actions/cache@v1
@@ -49,19 +52,6 @@ jobs:
           CERTIFICATE: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
         run: |
           scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
-
-      # - name: fastlane
-      #   env:
-      #     FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
-      #     FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-      #     FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-      #   run: |
-      #     brew install fastlane && fastlane beta
-
-      # && sudo xcode-select -r
-      - name: Explore z
-        run: |
-          xcode-select -p 
 
       - name: Build
         run: |
@@ -87,7 +77,4 @@ jobs:
           -archivePath TestBuildAndSign.xcarchive \
           -exportPath export \
           -exportOptionsPlist options.plist \
-          -verbose \
-          CODE_SIGN_IDENTITY = Apple Distribution \
-          PROVISION_PROFILE = 34d5382c-e7b3-4c71-ae9c-5d097e6350cd.mobileprovision \
-          DEVELOPMENT_TEAM = L796QSLV3E
+          -verbose
