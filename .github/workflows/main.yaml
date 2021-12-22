@@ -86,5 +86,7 @@ jobs:
           -archivePath TestBuildAndSign.xcarchive \
           -exportPath export \
           -exportOptionsPlist options.plist \
-          -allowProvisioningUpdates \
-          -verbose
+          -verbose \
+          CODE_SIGN_IDENTITY = Apple Distribution \
+          PROVISION_PROFILE = 34d5382c-e7b3-4c71-ae9c-5d097e6350cd.mobileprovision \
+          DEVELOPMENT_TEAM = L796QSLV3E
