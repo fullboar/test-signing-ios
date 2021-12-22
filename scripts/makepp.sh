@@ -9,7 +9,7 @@ echo ">> Provisioning Profile Home = ${PP_DIR}"
 UUID=$(/usr/libexec/plistbuddy -c Print:UUID /dev/stdin <<< `echo "${PROVISIONING_PROFILE}" | base64 -d | security cms -D`)
 echo "${PROVISIONING_PROFILE}" | base64 -d >${UUID}.mobileprovision
 md5 "${UUID}.mobileprovision"
-mkdir -p ${PP_DIR}
+mkdir -p "${PP_DIR}"
 cp ${UUID}.mobileprovision "${PP_DIR}/"
 
 echo ">> Build Provisioning Profile. 🤗"
