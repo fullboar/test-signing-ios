@@ -53,6 +53,10 @@ jobs:
         run: |
           scripts/makekc.sh ${{ secrets.KEYCHIAN_PASSWD }}
 
+      - name: Bump Build No.
+        run: |
+          bump_build.sh ./TestBuildAndSign/Info.plist
+
       - name: Build
         run: |
           xcodebuild \
@@ -66,10 +70,6 @@ jobs:
           -verbose \
           archive
 
-      - name: Explore 2
-        run: |
-          ls -lah
-
       - name: Archive & Sign
         run: |
           xcodebuild \
@@ -78,3 +78,17 @@ jobs:
           -exportPath export \
           -exportOptionsPlist options.plist \
           -verbose
+
+      - name: Distribute to iTunes
+        env:
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_KEY_IDENTIFIER: ${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
+        run: |
+          app-store-connect publish \
+          --apple-id ${{ secrets.APPLE_ID }} \
+          --password ${{ secrets.APPLE_ID_PASSWD }} \
+          --path TestBuildAndSign.ipa \
+          --enable-package-validation \
+          --max-build-processing-wait 4 \
+          --testflight
