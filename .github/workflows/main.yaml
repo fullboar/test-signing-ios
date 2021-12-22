@@ -86,11 +86,6 @@ jobs:
           -exportOptionsPlist options.plist \
           -verbose
 
-      - name: Explore
-        run: |
-          ls -lah \
-          ls -lah export/
-
       - name: Distribute to iTunes
         env:
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
