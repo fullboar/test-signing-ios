@@ -55,7 +55,7 @@ jobs:
 
       - name: Bump Build No.
         run: |
-          bump_build.sh ./TestBuildAndSign/Info.plist
+          scripts/bump_build.sh ./TestBuildAndSign/Info.plist
 
       - name: Build
         run: |
