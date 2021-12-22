@@ -58,9 +58,10 @@ jobs:
       #   run: |
       #     brew install fastlane && fastlane beta
 
+      # && sudo xcode-select -r
       - name: Explore z
         run: |
-          xcode-select -p && sudo xcode-select -r
+          xcode-select -p 
 
       - name: Build
         run: |
