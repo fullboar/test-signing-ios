@@ -33,6 +33,13 @@ jobs:
         run: |
           echo $(git rev-parse HEAD) > ./dd-cache-key.txt
 
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ env.cacheId }}-${{ hashFiles('**/dd-cache-key.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            
       - name: Cache derived data
         uses: actions/cache@v1
         with:
