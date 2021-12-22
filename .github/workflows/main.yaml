@@ -100,7 +100,7 @@ jobs:
           app-store-connect publish \
           --apple-id ${{ secrets.APPLE_ID }} \
           --password ${{ secrets.APPLE_ID_PASSWD }} \
-          --path TestBuildAndSign.ipa \
+          --path export/TestBuildAndSign.ipa \
           --enable-package-validation \
           --max-build-processing-wait 4 \
           --testflight
