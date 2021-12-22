@@ -17,7 +17,9 @@ open "${UUID}.mobileprovision"
 sleep 10
 
 # shut down xcode (optional)
-kill $(ps aux | grep 'Xcode' | awk '{print $2}')
+kill -TERM $(ps aux | grep 'Xcode' | awk '{print $2}')
+
+ls -lah "${PP_DIR}"
 
 # UUID=$(/usr/libexec/plistbuddy -c Print:UUID /dev/stdin <<< `echo "${PROVISIONING_PROFILE}" | base64 -d | security cms -D`)
 # echo "${PROVISIONING_PROFILE}" | base64 -d >${UUID}.mobileprovision
