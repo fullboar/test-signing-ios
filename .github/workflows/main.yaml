@@ -19,9 +19,9 @@ jobs:
       #   with:
       #     ruby-version: 2.6
 
-      # - name: Install fastlane
-      #   run: |
-      #     gem install fastlane
+      - name: Install Codemagic CLI Tools
+        run: |
+          pip3 install codemagic-cli-tools
 
       # Watch for changes to the `App` and `iOS` paths, use
       # git for cache keys.
