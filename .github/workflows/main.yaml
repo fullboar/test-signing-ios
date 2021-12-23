@@ -99,4 +99,5 @@ jobs:
           --path export/TestBuildAndSign.ipa \
           --enable-package-validation \
           --max-build-processing-wait 4 \
-          --testflight
+          --testflight \
+          --beta-group="Platform Services"
