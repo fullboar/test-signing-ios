@@ -98,5 +98,4 @@ jobs:
           --password ${{ secrets.APPLE_ID_PASSWD }} \
           --path export/TestBuildAndSign.ipa \
           --enable-package-validation \
-          --max-build-processing-wait 7 \
-          --testflight
+          --max-build-processing-wait 7
