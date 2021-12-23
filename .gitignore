@@ -6,3 +6,4 @@ xbuild/
 *.cert
 *.der
 export/
+*.p8
