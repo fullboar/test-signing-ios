@@ -23,6 +23,7 @@ jobs:
       #   with:
       #     ruby-version: 2.6
 
+      # https://blog.codemagic.io/app-store-connect-api-codemagic-cli-tools/
       - name: Install Codemagic CLI Tools
         run: |
           pip3 install codemagic-cli-tools
